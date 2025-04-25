@@ -59,6 +59,16 @@ def create_templates_folder(app_name ="test_app", project_name="test_project"):
     TEMPLATES = "templates"
     os.makedirs(TEMPLATES, exist_ok=True)
 
+#Creeaza urls.py
+
+def _create_urls_files(app_name ="test_app", project_name="test_project"):
+    cwd = os.getcwd()
+    os.chdir(os.path.join(cwd, project_name, app_name))
+    URLS_FILE_NAME = "urls.py"
+    URLS_CONTENT = """from django.urls import path\n\nurlpatterns = [\n\n]\n"""
+    with open(URLS_FILE_NAME, "w") as fwriter:
+        fwriter.write(URLS_CONTENT)
+
    
 
 if __name__ == "__main__":
@@ -67,12 +77,11 @@ if __name__ == "__main__":
     # create_project()
     # time.sleep(3)
     # create_application()
-
     #delete_project()
-
     #_add_app_to_installed_apps()
+    #create_templates_folder()
 
-    create_templates_folder()
+    _create_urls_files()
 
 
 
