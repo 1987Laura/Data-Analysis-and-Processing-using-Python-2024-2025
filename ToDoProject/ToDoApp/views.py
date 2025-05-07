@@ -54,3 +54,14 @@ def update_todo_view(request, pk):
 	}
 
 	return render(request, "update_todo.html", context)
+
+
+def mark_done_todo_view(request, pk):
+	todo_to_mark = ToDoItem.objects.get(id=pk)
+	print("todo urmator trebuie sters:", todo_to_mark)
+	
+	todo_to_mark.is_done = not todo_to_mark.is_done
+	todo_to_mark.save()
+
+	
+	return redirect("todo_list_url")
