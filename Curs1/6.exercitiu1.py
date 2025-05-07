@@ -1,9 +1,11 @@
-
 lista = [10, 2, 30, 50, 300, 10]
+
 
 # Versiunea 1 - filer + functie
 def elimina_elemente(element):
     return element > 5
+
+
 print(list(filter(elimina_elemente, lista)))
 
 # Versiunea 2 - filer + functie lamda

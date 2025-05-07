@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
 
@@ -23,9 +24,9 @@ from factorial.views import factorial_view, factorial_template_view
 from inmultire.views import inmultire_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     # definire a rutelor
-    path('factorial/<n>/',factorial_view),
-    path('template/<n>/', factorial_template_view),
-    path('inmultire/<num>', inmultire_view),
+    path("factorial/<n>/", factorial_view),
+    path("template/<n>/", factorial_template_view),
+    path("inmultire/<num>", inmultire_view),
 ]

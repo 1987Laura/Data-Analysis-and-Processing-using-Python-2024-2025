@@ -22,7 +22,6 @@ from django.test import TestCase
 #     print(chr(i))
 
 
-
 import pandas as pd
 
 
@@ -33,4 +32,3 @@ df = pd.read_csv("parole.csv")
 
 print(df)
 df.to_json("parole.json")
-

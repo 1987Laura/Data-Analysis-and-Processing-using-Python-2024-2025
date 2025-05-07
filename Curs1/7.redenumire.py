@@ -1,4 +1,3 @@
-
 print(bool("Hello"))
 
 bool = 500

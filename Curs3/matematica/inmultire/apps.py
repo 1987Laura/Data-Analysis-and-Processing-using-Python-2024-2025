@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class InmultireConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'inmultire'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "inmultire"
