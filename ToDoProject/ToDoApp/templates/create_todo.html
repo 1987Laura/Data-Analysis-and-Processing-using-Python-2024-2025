@@ -7,5 +7,11 @@
 </head>
 <body>
     <h1>create_todo</h1>
+    <form action="" method="post">
+
+        {% csrf_token %}
+        <input type="text" name="task" id="">
+        <input type="submit" value="Adauga">
+    </form>
 </body>
 </html>
