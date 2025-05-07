@@ -25,3 +25,32 @@ def create_todo_view(request):
 
 	context = {}
 	return render(request, 'create_todo.html', context)
+
+def delete_todo_view(request, pk):
+	todo_to_delete = ToDoItem.objects.get(id=pk)
+	print("todo urmator trebuie sters:", todo_to_delete)
+	todo_to_delete.delete()
+	return redirect("todo_list_url")
+
+
+def update_todo_view(request, pk):
+	if request.method == "POST":
+		print("Ai primit", request.POST)
+
+		new_task = request.POST.get("task")
+		if new_task:
+
+			task_to_update = ToDoItem.objects.get(id=pk)
+			task_to_update.name = new_task
+			task_to_update.save() 
+			return redirect("todo_list_url")
+
+	todo_to_update = ToDoItem.objects.get(id=pk)
+	print("todo urmator trebuie sters:", todo_to_update)
+	
+
+	context = {
+		'todo_model': todo_to_update
+	}
+
+	return render(request, "update_todo.html", context)

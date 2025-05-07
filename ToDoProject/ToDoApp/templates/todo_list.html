@@ -10,7 +10,10 @@
 
     <ol>
         {% for model in model_list %}
-            <li>{{model}}</li>
+            <li>{{model}} 
+            <a href="{%url 'delete_todo_url' model.id%}"> ✅ </a>
+            <a href="{%url 'update_todo_url' model.id%}"> 🖌️ </a>
+            </li>
             <br>
         {% endfor %}
     </ol>
